@@ -1,0 +1,97 @@
+.toolbar{
+    color: gray;
+    ul{
+        list-style: none;
+        font-size: 20px;
+        li{
+            align-self: center;
+            i{
+                cursor: pointer;
+            }
+        }
+    }
+    hr{
+       width: 50%; 
+    }
+    .toolbar-logo{
+        position: relative;
+    }
+    .underLine--toolbar-logo{
+        position: absolute;
+        width: 45%;
+        border: 1px solid black;
+    }
+}
+.mat-button-toggle-checked{
+    background-color: lightblue;
+}
+mat-button-toggle-group{
+    border-radius: 10px;
+}
+
+.actions{
+    color: gray;
+    ul{
+        list-style: none;
+        font-size: 18px;
+        font-weight: 300;
+        li{
+            align-self: center;
+        }
+    }
+    .action-button{
+        background-color: transparent;
+        border: 3px solid lightblue;
+        border-radius: 5px;
+        font-size: 18px;
+        line-height: 30px;
+        cursor: pointer;
+        i{
+            color: lightblue;  
+        }
+        .first{
+            margin-left: 20px;
+            font-size: 25px;
+        }
+        .second{
+            margin-right: 20px;
+            font-size: 15px;
+        }
+        .third{
+            color: black;
+            margin-left: 30px;
+            font-size: 18px;
+        }
+    }
+}
+.table{
+    margin-left: 15px;
+    margin-right: 5px;
+}
+mat-cell,mat-header-cell{
+    padding: 8px;
+    border-right: 2px solid lightblue;
+}
+mat-table{
+    border: 2px solid lightblue;
+    border-radius: 5px;
+}
+mat-header-row{
+    border-bottom: 2px solid lightblue;
+}
+mat-cell{
+    height: 70px;
+    overflow-x: visible;
+}
+mat-header-cell:last-child,mat-cell:last-child{
+    border-right: none;
+    padding-left: 20px;
+}
+
+mat-row{
+    border: none;
+}
+.mat-button{
+    min-width: auto;
+    padding: 0;
+}

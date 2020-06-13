@@ -1,0 +1,5 @@
+<section class="home--section" fxLayout fxLayoutAlign="start stretch">
+    <app-sidenav *ngIf="toggleNav"></app-sidenav>
+    <app-content (navToggle)="toggleNav = !toggleNav" fxFlex style="overflow-y: scroll;"></app-content>
+</section>
+

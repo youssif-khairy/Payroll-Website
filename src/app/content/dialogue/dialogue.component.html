@@ -1,0 +1,86 @@
+<div md-dialog-container class="dialog--section">
+    
+    <mat-dialog-content>
+        <div>
+            <label>Add Filter</label>
+            <mat-form-field appearance="outline" style="color: lightblue;">
+                <mat-select placeholder="Add Filter" [(value)]="selected">
+                    <mat-option value="fullName_FL">Name</mat-option>
+                    <mat-option value="firstContractingSalary">Salary</mat-option>
+                    <mat-option value="hiringDate">Hiring Date</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+        <div *ngIf="selected == 'fullName_FL'">
+            <mat-form-field>
+                <input matInput placeholder="Enter Employee Name" [(ngModel)]="ename">
+            </mat-form-field>
+        </div>
+        <div *ngIf="selected == 'firstContractingSalary'">
+            <mat-form-field appearance="outline" style="color: lightblue;">
+                <mat-select placeholder="Choose Option" [(value)]="selected2">
+                    <mat-option value="before">Less Than</mat-option>
+                    <mat-option value="after">Greater Than</mat-option>
+                    <mat-option value="between">Between</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="selected2 == 'before'">
+                <mat-form-field>
+                    <input matInput placeholder="Enter Amount" type="number" [(ngModel)]="bef">
+                </mat-form-field>
+              </div>
+              <div *ngIf="selected2 == 'after'">
+                <mat-form-field>
+                    <input matInput placeholder="Enter Amount" type="number" [(ngModel)]="aft">
+                </mat-form-field>
+              </div>
+              <div fxLayuot fxLayoutGap="5%" *ngIf="selected2 == 'between'">
+                <mat-form-field fxFlex="40%">
+                    <input matInput placeholder="Enter Amount" type="number" [(ngModel)]="b1">
+                </mat-form-field>
+                <span fxFlex="5%" style="align-self: center;">And</span>
+                <mat-form-field fxFlex="40%">
+                    <input matInput placeholder="Enter Amount" type="number" [(ngModel)]="b2">
+                </mat-form-field>
+              </div>
+        </div>
+        <div *ngIf="selected == 'hiringDate'">
+            <mat-form-field appearance="outline" style="color: lightblue;">
+                <mat-select placeholder="Choose Option" [(value)]="selected2">
+                    <mat-option value="before">Less Than</mat-option>
+                    <mat-option value="after">Greater Than</mat-option>
+                    <mat-option value="between">Between</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="selected2 == 'before'">
+                <mat-form-field>
+                    <input matInput placeholder="Enter Date" type="date" [(ngModel)]="bef">
+                </mat-form-field>
+              </div>
+              <div *ngIf="selected2 == 'after'">
+                <mat-form-field>
+                    <input matInput placeholder="Enter Date" type="date" [(ngModel)]="aft">
+                </mat-form-field>
+              </div>
+              <div fxLayuot fxLayoutGap="5%" *ngIf="selected2 == 'between'">
+                <mat-form-field fxFlex="40%">
+                    <input matInput placeholder="Enter Date" type="date" [(ngModel)]="b1">
+                </mat-form-field>
+                <span fxFlex="5%" style="align-self: center;">And</span>
+                <mat-form-field fxFlex="40%">
+                    <input matInput placeholder="Enter Date" type="date" [(ngModel)]="b2">
+                </mat-form-field>
+              </div>
+        </div>
+    </mat-dialog-content>
+    
+        <div class="action">
+            <button [mat-dialog-close]='{select:selected,name:ename,before:bef,after:aft,bet1:b1,bet2:b2}' class="action-button first" >Confirm</button>
+        </div>
+        
+        <div class="action">
+            <button [mat-dialog-close]='null' class="action-button second">Cancel</button>
+        </div>
+        
+    
+</div>
